@@ -27,7 +27,7 @@ namespace Company.Function
 
             var authManager = new PnP.Framework.AuthenticationManager();
             
-            using(var clientContext = authManager.GetAccessTokenContext("https://contoso.sharepoint.com", sharePointToken.Token)) 
+            using(var clientContext = authManager.GetAccessTokenContext("https://contoso.sharepoint.com/sites/sales", sharePointToken.Token)) 
             {
                 clientContext.Load(clientContext.Web, w => w.Title);
                 clientContext.ExecuteQuery();
